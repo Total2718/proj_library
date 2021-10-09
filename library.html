@@ -1,13 +1,80 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <title>App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script charset="utf-8" src="library.js"></script>
-    <link rel="stylesheet" href="library.css">
-</head>
-<body>
-   <header>The Library</header>
-</body>
+    <meta charset="UTF-8">
+    <head>
+        <link rel="stylesheet" href="library.css">
+        <script  src="script.js" defer></script>
+    </head>
+    <body>
+    <header>
+        <div id='title'>The Library</div>
+        <button type="button" id="add_book">Add Book</button>
+        </header>
+        <div id="card_container">
+            
+            <div class="library_card"></div>
+            <div class="library_card"></div>
+            <div class="library_card"></div>
+            <div class="library_card"></div>
+            <div class="library_card"></div>
+            <div class="library_card"></div>
+            <div class="library_card"></div>
+            
+            
+
+
+
+        </div>
+    </body>
+    <div id="pop_up_form">
+        <form id="pop_up_form">
+            <div>
+                <label for="title_input">Title:</label>
+                <input type="text" id="title_input" name="title_input"><br><br>
+            </div>
+            <div>
+                <label for="author_input">Author:</label>
+                <input type="text" id="author_input" name="author_input"><br><br>
+            </div>
+            <div>
+                <label for="pages_input">Number of Pages:</label>
+                <input type="text" id="pages_input" name="pages_input"><br><br>
+            </div>
+            <div>
+                <label for="read_input">Have you read this book?</label>
+                <input type="checkbox" id="read_input" name="pages_input">
+
+            </div>
+            <div>
+                <input type="submit" value="Cancel">
+                <input type="submit" value="Submit">
+            </div>
+            
+
+        </form>
+    </div>
 </html>
+
+
+<!-- 
+<body>
+    <header>
+        <div id='title'>The Library</div>
+        <button type="button" id="add_book">Add Book</button>
+        </header>
+        <div id="card_container">
+            
+            <div class="library_card">hi</div>
+            <div class="library_card"></div>
+            <div class="library_card"></div>
+            <div class="library_card"></div>
+            <div class="library_card"></div>
+            <div class="library_card"></div>
+            <div class="library_card"></div>
+            <div class="library_card"></div>
+            
+
+
+
+        </div>
+    </body> -->

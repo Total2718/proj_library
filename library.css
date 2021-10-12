@@ -24,6 +24,7 @@ html {
     justify-content: space-between;
     left: 10%;
     letter-spacing: 9px;
+    text-shadow: 4px 4px #e09d37;
 
 }
 #add_book {
@@ -35,6 +36,10 @@ html {
     font-size: 40px;
     background-color: #e09d37;
     border-radius: 1.5rem;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    box-shadow: 10px 5px 5px black;
 }
 
 #card_container {
@@ -103,7 +108,7 @@ html {
   border-color: rgb(80, 78, 78);
 }
 
-#title_input {
+#title_input_box {
   width: 15vw;
   border-style: solid ;
   border-width: thin;
@@ -111,7 +116,7 @@ html {
 }
 
 #author_input {
-  width: 2vw;
+  width: 6vw;
   border-style: solid ;
   border-width: thin;
   border-color: rgb(80, 78, 78);

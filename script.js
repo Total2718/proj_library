@@ -1,8 +1,13 @@
 // let myLibrary = [];
 
 // function Book(title) {
-//   this.title = title;
-//   addBookToLibrary(this.title);
+//   let submission_form = document.getElementById("submit_button");
+//   let submitted_title = submission_form[0];
+//   let submitted_author = submission_form[1];
+//   let submitted_pages = submission_form[2];
+//   let submitted_read = submission_form[3];
+//   let new_book = {title: };
+  
 // }
 
 // function addBookToLibrary(title) {
@@ -18,7 +23,7 @@
 
 let reg_title = "Title";
 let reg_author = "Author";
-let reg_pages = "Pages"
+let reg_pages = "Pages";
 
 let bold
 let card_container = document.getElementById("card_container");
@@ -36,5 +41,12 @@ for (let i = 0; i < lib_card.length; i++) {
     lib_card[i].appendChild(author);
     lib_card[i].appendChild(pages);
   } 
+  let submit_button_a = document.getElementById("submit_button")
+  submit_button_a.addEventListener("click", trial);
+function trial(){
+  let submitted_title = document.getElementById('title_input_box').value;
+  let submitted_author = document.getElementById('author_input').value;
+  let submitted_pages = document.getElementById('pages_input').value;
+  let submitted_read = document.getElementById('read_input').checked;
+}
 
-  

@@ -29,6 +29,8 @@ let bold
 let card_container = document.getElementById("card_container");
 let lib_card = document.getElementsByClassName("library_card");
 
+let form_back_cover = document.getElementById('cover');
+let add_book_form = document.getElementById('pop_up_form');
 for (let i = 0; i < lib_card.length; i++) {
     let book_title = document.createElement("div");
     let author = document.createElement("div");
@@ -50,3 +52,20 @@ function trial(){
   let submitted_read = document.getElementById('read_input').checked;
 }
 
+//this is an event listener to make the pop up form appear
+let add_book_button = document.getElementById('add_book');
+
+add_book_button.addEventListener("click", make_form_appear);
+
+function make_form_appear(){
+  add_book_form.classList.add('active');
+  form_back_cover.classList.add('active');
+}
+
+form_back_cover.addEventListener('click', form_disappear);
+
+function form_disappear(){
+  form_back_cover.classList.remove('active');
+  add_book_form.classList.remove('active');
+
+}

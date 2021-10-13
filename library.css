@@ -82,23 +82,46 @@ html {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  z-index: 0;
+  
 }
 
-#pop_up_form {
+#pop_up_form.add_form {
   display:flex;
   position: relative;
   margin: -40% auto;
-  z-index: 1;
-  width: 30vw;
-  height: 60vh;
-  background-color: rgb(206, 193, 193);
+  z-index: 2;
+  width: 20vw;
+  height: 40vh;
+  background-color: rgb(111, 189, 223);
   border-style: solid ;
   border-width: thin;
-  visibility: visible;
   text-align: center;
   flex-direction: column;
   justify-content: space-evenly;
+  transform: scale(0);
+  transition: 200ms ease-in-out;
+}
+
+#pop_up_form.add_form.active {
+  transform:  scale(1);
+  
+}
+
+#cover.regular {
+  position: relative;
+  visibility: visible;
+  top: 0;
+  left: 50;
+  width: 100vw;
+  height: 160vh;
+  opacity: 0.7;
+  background-color: black;
+  z-index: 1;
+  transform: scale(0);
+}
+#cover.active {
+  transform:  scale(1);
+
 }
 
 #pages_input {
@@ -120,5 +143,20 @@ html {
   border-style: solid ;
   border-width: thin;
   border-color: rgb(80, 78, 78);
+}
+
+#submit_button {
+  font-size: 20px;
+  width: 5vw;
+  border-style: solid ;
+  border-width: thin;
+  border-color: rgb(80, 78, 78);
+  background-color: #e09d37;
+
+}
+
+body {
+  z-index: 0;
+  height: 100%;
 }
 

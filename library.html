@@ -5,13 +5,12 @@
         <link rel="stylesheet" href="library.css">
         <script  src="script.js" defer></script>
     </head>
-    <body>
+    <body id='body'>
     <header>
         <div id='title'>The Library</div>
         <button type="button" id="add_book">Add Book</button>
         </header>
         <div id="card_container">
-            
             <div class="library_card"></div>
             <div class="library_card"></div>
             <div class="library_card"></div>
@@ -19,26 +18,19 @@
             <div class="library_card"></div>
             <div class="library_card"></div>
             <div class="library_card"></div>
-            
-            
-
-
-
         </div>
-    </body>
-    
         <form id="pop_up_form" class="add_form">
             <div>
                 <label for="title_input">Title:</label>
-                <input type="text" id="title_input_box" name="title_input"><br><br>
+                <input type="text" id="title_input_box" name="title_input" required><br><br>
             </div>
             <div>
                 <label for="author_input">Author:</label>
-                <input type="text" id="author_input" name="author_input"><br><br>
+                <input type="text" id="author_input" name="author_input" required><br><br>
             </div>
             <div>
                 <label for="pages_input">Number of Pages:</label>
-                <input type="text" id="pages_input" name="pages_input"><br><br>
+                <input type="number" id="pages_input" name="pages_input" required><br><br>
             </div>
             <div>
                 <label for="read_input">Have you read this book?</label>
@@ -46,36 +38,15 @@
 
             </div>
             <div>
-                
-               
-                    <button id="submit_button">Submit</button>
+                    <button id="submit_button">Add Book</button>
             </div>
             
 
         </form>
+        <div id="cover" class="regular"></div>
+    </body>
+    
+       
     
 </html>
 
-
-<!-- 
-<body>
-    <header>
-        <div id='title'>The Library</div>
-        <button type="button" id="add_book">Add Book</button>
-        </header>
-        <div id="card_container">
-            
-            <div class="library_card">hi</div>
-            <div class="library_card"></div>
-            <div class="library_card"></div>
-            <div class="library_card"></div>
-            <div class="library_card"></div>
-            <div class="library_card"></div>
-            <div class="library_card"></div>
-            <div class="library_card"></div>
-            
-
-
-
-        </div>
-    </body> -->

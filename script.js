@@ -109,6 +109,7 @@ function update_lib_display(){
     new_lib_card.appendChild(read_div);
     new_lib_card.appendChild(rmv_btn);
     card_container.appendChild(new_lib_card);
+    new_lib_card.addEventListener('click', function(e){switch_read(e)});
 
     
   }
@@ -128,4 +129,19 @@ function remove_card(e){
       
     }
     update_lib_display();
+}
+
+function switch_read(e){
+  
+ let card_content = e.target.children;
+  let current_status = card_content[3].textContent;
+  let a = 'Need to Read';
+  let b = 'Already Read';
+  if (current_status == a){
+    card_content[3].textContent = b;
+  } else {
+    card_content[3].textContent = a;
+  }
+
+  
 }

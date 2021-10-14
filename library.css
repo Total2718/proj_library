@@ -78,8 +78,13 @@ html {
     justify-content: space-around;
     text-align: center;
     font-size: 20px;
+    box-shadow: 8px 4px 4px black;
 }
 
+.library_card:active {
+  box-shadow: 6px 3px 3px black;
+  transform: translateY(2px) translateX(2px);
+}
 
 
 

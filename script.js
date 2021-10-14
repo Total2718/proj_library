@@ -7,51 +7,16 @@ function Book(title, author, pages, read) {
   this.pages = pages;
   this.read = read;
   addBookToLibrary(this);
-  // let submission_form = document.getElementById("submit_button");
-  // let submitted_title = submission_form[0];
-  // let submitted_author = submission_form[1];
-  // let submitted_pages = submission_form[2];
-  // let submitted_read = submission_form[3];
-  // let new_book = {title: submitted_title };
   
 }
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
-    
-  
+    update_lib_display();
 }
-
-
-
-
-
-
-let reg_title = "Title";
-let reg_author = "Author";
-let reg_pages = "Pages";
-
-
-let card_container = document.getElementById("card_container");
-let lib_card = document.getElementsByClassName("library_card");
 
 let form_back_cover = document.getElementById('cover');
 let add_book_form = document.getElementById('pop_up_form');
-
-
-for (let i = 0; i < lib_card.length; i++) {
-    let book_title = document.createElement("div");
-    let author = document.createElement("div");
-    let pages = document.createElement("div");
-    book_title.innerHTML = reg_title.bold() + ": HP and the Order of the Pheonix";
-    author.innerHTML = reg_author.bold() + ": J.K. Rowling";
-    pages.innerHTML = reg_pages.bold() + ": 455";
-
-    lib_card[i].appendChild(book_title);
-    lib_card[i].appendChild(author);
-    lib_card[i].appendChild(pages);
-  } 
- 
 
 //this is an event listener to make the pop up form appear
 let add_book_button = document.getElementById('add_book');
@@ -80,6 +45,11 @@ function check_book(){
   let submitted_author = document.getElementById('author_input').value;
   let submitted_pages = document.getElementById('pages_input').value;
   let submitted_read = document.getElementById('read_input').checked;
+  if (submitted_read == true){
+    submitted_read = 'Already Read';
+  } else {
+    submitted_read = 'Need to Read';
+  }
   let title_flag = false;
   
   for (let i = 0; i < myLibrary.length; i++){
@@ -91,8 +61,43 @@ function check_book(){
   if (title_flag == false){
     const new_book = new Book(submitted_title, submitted_author, submitted_pages, submitted_read);
   }
-console.log(myLibrary);
+
 form_disappear();
+}
+
+let reg_title = "Title";
+let reg_author = "Author";
+let reg_pages = "Pages";
+
+let card_container = document.getElementById("card_container");
+
+function update_lib_display(){
+  for (let i = 0; i < myLibrary.length; i++){
+   let current_title = myLibrary[i].title;
+   let current_author = myLibrary[i].author;
+   let current_pages = myLibrary[i].pages;
+   let current_read = myLibrary[i].read;
+
+    let book_title_div = document.createElement("div");
+    let author_div = document.createElement("div");
+    let pages_div = document.createElement("div");
+    let read_div = document.createElement('div');
+    book_title_div.innerHTML = reg_title.bold() + ": " + current_title;
+    author_div.innerHTML = reg_author.bold() + ": " + current_author;
+    pages_div.innerHTML = reg_pages.bold() + ": " + current_pages;
+    read_div.innerHTML = current_read;
+
+    let new_lib_card = document.createElement("div");
+    new_lib_card.classList.add('library_card');
+    new_lib_card.appendChild(book_title_div);
+    new_lib_card.appendChild(author_div);
+    new_lib_card.appendChild(pages_div);
+    new_lib_card.appendChild(read_div);
+    card_container.appendChild(new_lib_card);
+
+    
+  }
+
 }
 
 

@@ -67,11 +67,21 @@ form_disappear();
 
 let reg_title = "Title";
 let reg_author = "Author";
-let reg_pages = "Pages";
+let reg_pages = "Pages"; 
+
+
+
+
 
 let card_container = document.getElementById("card_container");
 
+//this function wipes the current display and loops through the updated list to display the cards
 function update_lib_display(){
+  let lib_cards = document.getElementsByClassName('library_card');
+  let card_length = lib_cards.length
+  for (let i=0; i < card_length; i++){
+    lib_cards[0].remove();
+  }
   for (let i = 0; i < myLibrary.length; i++){
    let current_title = myLibrary[i].title;
    let current_author = myLibrary[i].author;
@@ -82,6 +92,10 @@ function update_lib_display(){
     let author_div = document.createElement("div");
     let pages_div = document.createElement("div");
     let read_div = document.createElement('div');
+    let rmv_btn = document.createElement('button');
+    rmv_btn.classList.add('remove_btn');
+    rmv_btn.innerHTML = 'Remove Book';
+    rmv_btn.addEventListener('click', function(e){remove_card(e)});
     book_title_div.innerHTML = reg_title.bold() + ": " + current_title;
     author_div.innerHTML = reg_author.bold() + ": " + current_author;
     pages_div.innerHTML = reg_pages.bold() + ": " + current_pages;
@@ -93,6 +107,7 @@ function update_lib_display(){
     new_lib_card.appendChild(author_div);
     new_lib_card.appendChild(pages_div);
     new_lib_card.appendChild(read_div);
+    new_lib_card.appendChild(rmv_btn);
     card_container.appendChild(new_lib_card);
 
     
@@ -100,6 +115,17 @@ function update_lib_display(){
 
 }
 
-
-
-
+//this function removes the object from the mylibrary array
+function remove_card(e){
+  let title = e.target.parentNode.firstChild.textContent
+    title = title.slice(7);
+    
+    for (let i = 0; i < myLibrary.length; i++){
+      if (title == myLibrary[i].title){
+        
+        myLibrary.splice(i,1);
+      }
+      
+    }
+    update_lib_display();
+}

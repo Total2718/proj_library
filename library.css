@@ -42,6 +42,15 @@ html {
     box-shadow: 10px 5px 5px black;
 }
 
+#add_book:active {
+  box-shadow: 8px 4px 4px black;
+  transform: translateY(2px) translateX(2px);
+}
+
+#add_book:hover {
+  filter: brightness(0.9);
+}
+
 #card_container {
    display: flex;
    flex-direction: row;
@@ -161,3 +170,19 @@ body {
   height: 100%;
 }
 
+.remove_btn {
+  position: relative;
+  margin: 0 auto;
+  width: 7vw;
+  height: 5vh;
+  background-color: rgb(214, 185, 70);
+  line-height: 40px;
+  border-radius: 10px;
+  border-style: solid black;
+  border-width: 2px;
+  font-size: 18px;
+  
+}
+.remove_btn:hover {
+  filter: brightness(0.9);
+}

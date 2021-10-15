@@ -14,7 +14,7 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
     update_lib_display();
 }
-
+//cover to be placed in between the pop up form and rest of content to give shadow look
 let form_back_cover = document.getElementById('cover');
 let add_book_form = document.getElementById('pop_up_form');
 
@@ -22,6 +22,7 @@ let add_book_form = document.getElementById('pop_up_form');
 let add_book_button = document.getElementById('add_book');
 
 add_book_button.addEventListener("click", make_form_appear);
+
 
 function make_form_appear(){
   add_book_form.classList.add('active');
@@ -34,12 +35,13 @@ function form_disappear(){
   form_back_cover.classList.remove('active');
   add_book_form.classList.remove('active');
   add_book_form.reset();
-
 }
 
 
 let submit_button_a = document.getElementById("submit_button")
 submit_button_a.addEventListener("click", check_book);
+
+//this function checks to see if book is already in the library
 function check_book(){
   let submitted_title = document.getElementById('title_input_box').value;
   let submitted_author = document.getElementById('author_input').value;
@@ -65,13 +67,12 @@ function check_book(){
 form_disappear();
 }
 
+
+
+//these are for inserts into the text content of the lib cards
 let reg_title = "Title";
 let reg_author = "Author";
 let reg_pages = "Pages"; 
-
-
-
-
 
 let card_container = document.getElementById("card_container");
 
@@ -141,6 +142,7 @@ function remove_card(e){
     update_lib_display();
 }
 
+//switches the read status based on the text content of the current status
 function switch_read(e){
   
   let read_stat_div = e.target;

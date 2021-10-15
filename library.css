@@ -78,7 +78,7 @@ html {
     justify-content: space-around;
     text-align: center;
     font-size: 20px;
-    box-shadow: 8px 4px 4px black;
+    box-shadow: 4px 2px 2px black;
 }
 
 
@@ -179,8 +179,9 @@ body {
   background-color: rgb(214, 185, 70);
   line-height: 40px;
   border-radius: 10px;
-  border-style: solid black;
-  border-width: 2px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
   font-size: 18px;
   
 }
@@ -194,8 +195,9 @@ body {
   font-size: 18px;
   line-height: 40px;
   border-radius: 10px;
-  border-style: solid black;
-  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
 }
 #read_status.already {
   background-color: green;
@@ -203,4 +205,7 @@ body {
 
 #read_status.need {
   background-color: red;
+}
+#read_status:hover {
+  filter: brightness(0.9);
 }

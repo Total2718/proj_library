@@ -91,7 +91,11 @@ function update_lib_display(){
     let book_title_div = document.createElement("div");
     let author_div = document.createElement("div");
     let pages_div = document.createElement("div");
-    let read_div = document.createElement('div');
+    let read_div = document.createElement('button');
+    read_div.id = 'read_status';
+    read_div.addEventListener('click', function(e){switch_read(e)});
+
+    
     let rmv_btn = document.createElement('button');
     rmv_btn.classList.add('remove_btn');
     rmv_btn.innerHTML = 'Remove Book';
@@ -101,6 +105,12 @@ function update_lib_display(){
     pages_div.innerHTML = reg_pages.bold() + ": " + current_pages;
     read_div.innerHTML = current_read;
 
+    if (read_div.textContent == 'Need to Read'){
+      read_div.classList.add('need');
+    } else {
+      read_div.classList.add('already');
+    }
+
     let new_lib_card = document.createElement("div");
     new_lib_card.classList.add('library_card');
     new_lib_card.appendChild(book_title_div);
@@ -109,7 +119,7 @@ function update_lib_display(){
     new_lib_card.appendChild(read_div);
     new_lib_card.appendChild(rmv_btn);
     card_container.appendChild(new_lib_card);
-    new_lib_card.addEventListener('click', function(e){switch_read(e)});
+    // new_lib_card.addEventListener('click', function(e){switch_read(e)});
 
     
   }
@@ -133,14 +143,18 @@ function remove_card(e){
 
 function switch_read(e){
   
- let card_content = e.target.children;
-  let current_status = card_content[3].textContent;
+  let read_stat_div = e.target;
+  let current_status = read_stat_div.textContent;
   let a = 'Need to Read';
   let b = 'Already Read';
   if (current_status == a){
-    card_content[3].textContent = b;
+    read_stat_div.textContent = b;
+    read_stat_div.classList.add('already');
+    read_stat_div.classList.remove('need');
   } else {
-    card_content[3].textContent = a;
+    read_stat_div.textContent = a;
+    read_stat_div.classList.add('need');
+    read_stat_div.classList.remove('already');
   }
 
   
